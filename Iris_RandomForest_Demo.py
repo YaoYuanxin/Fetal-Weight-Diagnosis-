@@ -16,6 +16,9 @@ Predicts Iris **flower type** using the ***Iris*** dataset from sklearn
 st.sidebar.header("Use Input")
 
 def user_input_features():
+    """
+    Converts user input into a dataframe
+    """
     sepal_length = st.sidebar.slider("Sepal Length", 3.0, 10.0, 5.0)
     sepal_width = st.sidebar.slider("Sepal Width", 1.0, 5.0, 3.0)
     petal_length = st.sidebar.slider("Petal Length", 1.0, 9.0, 5.0)
@@ -43,7 +46,8 @@ rf_classifier.fit(X,y)
 
 y_pred = rf_classifier.predict(df)
 
+#st.subheader('Class labels and their corresponding index number')
+#st.write(iris.target_names)
 
 st.subheader("Predicted Iris Flower Type")
 st.write(iris.target_names[y_pred])
-
